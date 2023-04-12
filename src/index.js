@@ -90,3 +90,12 @@ function alertNoImagesFound() {
 function alertEndOfSearch() {
   Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.");
 }
+
+window.onscroll = function() {
+  var btn = document.getElementById("load-more-btn");
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    btn.classList.remove("is-hidden");
+  } else {
+    btn.classList.add("is-hidden");
+  }
+};
